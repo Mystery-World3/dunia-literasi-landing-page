@@ -1,7 +1,3 @@
-/* ================================================== */
-/* KODE CSS LENGKAP - TEMA GELAP EFEK GLOW        */
-/* ================================================== */
-
 :root {
   --primary-red: #e53935;
   --primary-red-darker: #c62828;
@@ -31,7 +27,6 @@ body {
   line-height: 1.6;
 }
 
-/* Header Jumbotron */
 .judul {
   padding: 3rem 1.5rem;
   text-align: center;
@@ -81,7 +76,6 @@ body {
   margin: 0.5rem auto 0 auto;
 }
 
-/* Navigasi */
 nav {
   background-image: linear-gradient(to right, var(--primary-red), var(--primary-red-darker));
   padding: 0.75rem 0;
@@ -134,7 +128,7 @@ main {
   margin: 0 auto;
 }
 
-main > div {
+main>div {
   flex: 5;
 }
 
@@ -170,25 +164,25 @@ aside {
   border-right-color: var(--primary-red);
 }
 
-article.card > div {
-    margin-bottom: 2rem;
-}
-article.card > div:last-child {
-    margin-bottom: 0;
+article.card>div {
+  margin-bottom: 2rem;
 }
 
-/* === PERUBAHAN METODE PENENGahan JUDUL DI SINI === */
+article.card>div:last-child {
+  margin-bottom: 0;
+}
+
 .main-title-section {
-    text-align: center;
+  text-align: center;
 }
-.main-title-section .media-wrapper {
-    text-align: left; /* Pastikan konten di bawahnya tetap rata kiri */
-}
-.main-title-section h2 {
-    margin-bottom: 1.5rem;
-}
-/* === PERUBAHAN SELESAI === */
 
+.main-title-section .media-wrapper {
+  text-align: left;
+}
+
+.main-title-section h2 {
+  margin-bottom: 1.5rem;
+}
 
 .media-wrapper {
   display: flex;
@@ -198,13 +192,14 @@ article.card > div:last-child {
 
 .image {
   width: 200px;
-  height: 200px; 
-  flex-shrink: 0; 
+  height: 200px;
+  flex-shrink: 0;
   border-radius: 6px;
   object-fit: cover;
 }
 
-h2,h3 {
+h2,
+h3 {
   color: var(--heading-color);
   font-weight: 700;
   line-height: 1.3;
@@ -220,7 +215,6 @@ h3 {
   margin-top: 0;
 }
 
-/* Kartu Profil di Samping */
 .profile-card {
   text-align: center;
   border-right-color: var(--primary-red);
@@ -248,10 +242,10 @@ aside .profile-card table {
 
 aside .profile-card th,
 aside .profile-card td {
-  padding: 0.8rem 0.2rem; 
+  padding: 0.8rem 0.2rem;
   border: none;
   background: none;
-  border-bottom: 1px solid var(--accent-grey); 
+  border-bottom: 1px solid var(--accent-grey);
 }
 
 aside .profile-card tr:last-child th,
@@ -271,7 +265,6 @@ aside .profile-card td {
 }
 
 
-/* Footer */
 footer {
   padding: 1.5rem;
   color: var(--light-text);
@@ -279,13 +272,41 @@ footer {
   text-align: center;
   font-weight: 500;
   border-top: 2px solid var(--primary-red);
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem; 
 }
 
-/* Pengaturan untuk Tampilan Mobile (Responsif) */
+.footer-cta-button {
+  display: inline-block;
+  padding: 8px 16px; 
+  border: 1px solid var(--primary-red); 
+  border-radius: 50px;
+  color: var(--primary-red);
+  background-color: transparent;
+  font-weight: 600; 
+  font-size: 0.9rem; 
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.footer-cta-button:hover,
+.footer-cta-button:focus {
+  transform: translateY(-5px) scale(1.05);
+  background-color: var(--primary-red);
+  color: #fff;
+  box-shadow: 0 0 15px var(--primary-red),
+    0 0 25px var(--primary-red-darker),
+    0 0 35px rgba(229, 57, 53, 0.4);
+}
+
 @media screen and (max-width: 992px) {
   main {
     flex-flow: column nowrap;
   }
+
   aside {
     position: static;
     width: 100%;
@@ -296,15 +317,19 @@ footer {
   .judul h1 {
     font-size: 2rem;
   }
+
   .judul p {
     font-size: 1rem;
   }
+
   h2 {
     font-size: 1.6rem;
   }
+
   h3 {
     font-size: 1.25rem;
   }
+
   nav ul {
     justify-content: center;
   }
@@ -312,15 +337,15 @@ footer {
   .media-wrapper {
     flex-direction: column;
   }
-  
+
   .image {
-    width: 100%; 
-    height: auto; 
-    max-width: 250px; 
+    width: 100%;
+    height: auto;
+    max-width: 250px;
     margin: 0 auto 1rem auto;
   }
-  
+
   aside .profile-card table {
-      text-align: left;
+    text-align: left;
   }
 }
