@@ -1,0 +1,326 @@
+/* ================================================== */
+/* KODE CSS LENGKAP - TEMA GELAP EFEK GLOW        */
+/* ================================================== */
+
+:root {
+  --primary-red: #e53935;
+  --primary-red-darker: #c62828;
+  --dark-background: #121212;
+  --card-background: #1e1e1e;
+  --light-text: #e0e0e0;
+  --heading-color: var(--primary-red);
+  --accent-grey: #424242;
+  --nav-link-color: #f5f5f5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  background-color: var(--dark-background);
+  color: var(--light-text);
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* Header Jumbotron */
+.judul {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  border-bottom: 3px solid var(--primary-red);
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.judul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(assets/.images/membaca.jpg);
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px) brightness(0.7);
+  transform: scale(1.1);
+  z-index: -2;
+}
+
+.judul::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+.judul h1 {
+  color: #ffffff;
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.judul p {
+  color: var(--light-text);
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0.5rem auto 0 auto;
+}
+
+/* Navigasi */
+nav {
+  background-image: linear-gradient(to right, var(--primary-red), var(--primary-red-darker));
+  padding: 0.75rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s;
+}
+
+nav.navbar-scrolled {
+  background-image: linear-gradient(to right, rgba(229, 57, 53, 0.9), rgba(198, 40, 40, 0.9));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  list-style-type: none;
+}
+
+nav a {
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--nav-link-color);
+  padding: 10px 18px;
+  border-radius: 6px;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  font-weight: 700;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  transform: translateY(0);
+  box-shadow: 0 0 10px var(--primary-red), 0 0 20px var(--primary-red-darker);
+  text-shadow: 0 0 2px #fff;
+}
+
+main {
+  padding: 2rem 1.5rem;
+  display: flex;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+main > div {
+  flex: 5;
+}
+
+aside {
+  flex: 2;
+  position: sticky;
+  top: 5.5rem;
+  align-self: flex-start;
+  height: max-content;
+}
+
+.card {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  border-right: none;
+  border-left: none;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px 5px rgba(229, 57, 53, 0.4);
+  border-right-color: var(--primary-red);
+}
+
+article.card > div {
+    margin-bottom: 2rem;
+}
+article.card > div:last-child {
+    margin-bottom: 0;
+}
+
+/* === PERUBAHAN METODE PENENGahan JUDUL DI SINI === */
+.main-title-section {
+    text-align: center;
+}
+.main-title-section .media-wrapper {
+    text-align: left; /* Pastikan konten di bawahnya tetap rata kiri */
+}
+.main-title-section h2 {
+    margin-bottom: 1.5rem;
+}
+/* === PERUBAHAN SELESAI === */
+
+
+.media-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.image {
+  width: 200px;
+  height: 200px; 
+  flex-shrink: 0; 
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+h2,h3 {
+  color: var(--heading-color);
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+/* Kartu Profil di Samping */
+.profile-card {
+  text-align: center;
+  border-right-color: var(--primary-red);
+}
+
+.profile-card h3 {
+  margin-top: 0;
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 1rem 0;
+  border: 3px solid var(--accent-grey);
+}
+
+aside .profile-card table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  text-align: left;
+}
+
+aside .profile-card th,
+aside .profile-card td {
+  padding: 0.8rem 0.2rem; 
+  border: none;
+  background: none;
+  border-bottom: 1px solid var(--accent-grey); 
+}
+
+aside .profile-card tr:last-child th,
+aside .profile-card tr:last-child td {
+  border-bottom: none;
+}
+
+aside .profile-card th {
+  color: var(--primary-red);
+  font-weight: 700;
+  width: 80px;
+}
+
+aside .profile-card td {
+  color: var(--light-text);
+  font-weight: 500;
+}
+
+
+/* Footer */
+footer {
+  padding: 1.5rem;
+  color: var(--light-text);
+  background-image: linear-gradient(to right, #212121, #000);
+  text-align: center;
+  font-weight: 500;
+  border-top: 2px solid var(--primary-red);
+}
+
+/* Pengaturan untuk Tampilan Mobile (Responsif) */
+@media screen and (max-width: 992px) {
+  main {
+    flex-flow: column nowrap;
+  }
+  aside {
+    position: static;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .judul h1 {
+    font-size: 2rem;
+  }
+  .judul p {
+    font-size: 1rem;
+  }
+  h2 {
+    font-size: 1.6rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+  nav ul {
+    justify-content: center;
+  }
+
+  .media-wrapper {
+    flex-direction: column;
+  }
+  
+  .image {
+    width: 100%; 
+    height: auto; 
+    max-width: 250px; 
+    margin: 0 auto 1rem auto;
+  }
+  
+  aside .profile-card table {
+      text-align: left;
+  }
+}
