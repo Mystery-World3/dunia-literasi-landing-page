@@ -60,4 +60,5 @@ Profil penulis dapat ditemukan di dalam sidebar halaman web.
 - **Telepon**: 0856-4880-4502
 
 ---
-&copy; 2025 Dunia Literasi. Tautan ke repositori GitHub proyek ini tersedia di bagian footer.
+
+*Created by Mystery-World3*
